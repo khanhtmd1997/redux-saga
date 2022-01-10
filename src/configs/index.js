@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://jsonplaceholder.typicode.com/'
+export const BASE_URL = 'https://61bfdf3ab25c3a00173f4f15.mockapi.io/'

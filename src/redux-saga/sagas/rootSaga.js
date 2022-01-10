@@ -4,6 +4,7 @@ import { UsersSaga, PostsSaga } from "./handlers";
 export default function* rootSaga() {
     yield all([
         UsersSaga.watcherUserSaga(),
-        PostsSaga.watcherPostSaga()
+        PostsSaga.watcherPostSaga(),
+        UsersSaga.removeUserSaga()
     ])
 }

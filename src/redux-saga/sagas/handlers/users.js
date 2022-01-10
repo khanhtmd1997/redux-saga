@@ -11,10 +11,30 @@ function* handleGetUsers() {
     }
 }
 
+function* handleRemoveUser() {
+    try {
+        const user = yield call(UsersRequests.removeUser);
+        yield put({
+            type: 'REMOVE_USER_SUCCESS', user: user
+        })
+    } catch (error) {
+        yield put({
+            type: 'REMOVE_USER_FAILED', message: error.message
+        });
+    }
+}
+
+
+
 function* watcherUserSaga() {
     yield takeLatest(GET_USERS_REQUESTED, handleGetUsers);
 }
 
+function* removeUserSaga() {
+    yield takeLatest('REMOVE_USER_REQUEST', handleRemoveUser);
+}
+
 export const UsersSaga = {
-    watcherUserSaga
+    watcherUserSaga,
+    removeUserSaga
 }

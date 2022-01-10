@@ -6,6 +6,13 @@ const getUsers = () => {
     }
 }
 
+const removeUser = (id) => {
+    return {
+        type: 'REMOVE_USER_REQUEST',
+    }
+}
+
 export const UsersAction = {
-    getUsers
+    getUsers,
+    removeUser
 }

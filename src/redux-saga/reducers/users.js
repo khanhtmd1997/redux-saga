@@ -8,6 +8,15 @@ const users = (state = user, action) => {
             return { ...state, loading: false, users: action.users }
         case GET_USERS_FAILED:
             return { ...state, loading: false, error: action.message }
+
+        case 'REMOVE_USER_REQUEST':
+            return { ...state, loading: true }
+        case 'REMOVE_USER_SUCCESS':
+            console.log(action);
+            // 
+            return { ...state, loading: false, user: action.user }
+        case 'REMOVE_USER_FAILED':
+            return { ...state, loading: false, error: action.message }
         default:
             return state;
     }
