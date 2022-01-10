@@ -3,22 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createStore, applyMiddleware, compose } from "redux";
+// import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
-import createSagaMiddleware from "redux-saga";
-import rootSaga from './redux-saga/sagas/rootSaga';
-import reducers from './redux-saga/reducers';
+import { store } from './redux/store';
+// import createSagaMiddleware from "redux-saga";
+// import rootSaga from './redux-saga/sagas/rootSaga';
+// import reducers from './redux-saga/reducers';
 
-const sagaMiddleware = createSagaMiddleware();
+// const sagaMiddleware = createSagaMiddleware();
 
-const middleware = [sagaMiddleware];
+// const middleware = [sagaMiddleware];
 
-const store = compose(
-  applyMiddleware(...middleware),
-  // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-)(createStore)(reducers);
+// const store = compose(
+//   applyMiddleware(...middleware),
+//   // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+// )(createStore)(reducers);
 
-sagaMiddleware.run(rootSaga);
+// sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <React.StrictMode>
